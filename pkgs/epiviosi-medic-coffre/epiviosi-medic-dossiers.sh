@@ -1,5 +1,9 @@
 # epiviosi-medic-dossiers — interface graphique du coffre « Dossiers médicaux ».
 
+# Rendu logiciel pour les fenêtres GTK4 de zenity : sans accélération Vulkan
+# (cartes graphiques anciennes ou virtuelles), elles restaient invisibles.
+export GSK_RENDERER="${GSK_RENDERER:-cairo}"
+
 titre="Dossiers médicaux — EPIVÍOSI MEDIC"
 clair="$HOME/Dossiers-médicaux"
 
