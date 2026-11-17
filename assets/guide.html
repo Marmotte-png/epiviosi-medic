@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EPIVÍOSI MEDIC</title>
+<style>
+  :root { --bg: #0b1826; --fg: #f1ede4; --accent: #e8b04b; --muted: #7fa6c4; --card: #ffffff0d; --red: #e2574c; }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+         font: 16px/1.55 system-ui, sans-serif; }
+  main { max-width: 50rem; margin: 0 auto; padding: 2rem 1rem 3rem; }
+  h1 { color: var(--accent); letter-spacing: .04em; margin-bottom: .2rem; }
+  h2 { color: var(--accent); border-top: 1px solid #ffffff22; padding-top: 1.2rem; }
+  h3 { margin-bottom: .3rem; }
+  .sub { color: var(--muted); margin-top: 0; }
+  .card { background: var(--card); border-radius: 8px; padding: .2rem 1rem .6rem; margin: .8rem 0; }
+  .urgent { border-left: 4px solid var(--red); }
+  .nums { display: grid; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); gap: .5rem; margin: .6rem 0; }
+  .num { background: #ffffff10; border-radius: 6px; padding: .4rem .6rem; }
+  .num b { display: block; font-size: 1.6rem; color: var(--fg); }
+  .num span { color: var(--muted); font-size: .9rem; }
+  code { background: #ffffff14; padding: .1em .35em; border-radius: 4px; }
+  a { color: var(--accent); }
+  nav a { margin-right: 1rem; }
+  table { border-collapse: collapse; width: 100%; }
+  td, th { text-align: left; padding: .3rem .5rem; border-bottom: 1px solid #ffffff1a; vertical-align: top; }
+  li { margin-bottom: .3rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>EPIVÍOSI MEDIC</h1>
+  <p class="sub">Documentation médicale et dossiers chiffrés, sans connexion. · Medical documentation and encrypted records, offline.</p>
+  <nav><a href="#fr">Français</a><a href="#en">English</a></nav>
+
+  <section id="fr" lang="fr">
+  <div class="card urgent">
+  <h3>Urgence : alerter d'abord</h3>
+  <div class="nums">
+    <div class="num"><b>15</b><span>SAMU, urgence médicale</span></div>
+    <div class="num"><b>112</b><span>Urgence, toute l'Europe</span></div>
+    <div class="num"><b>18</b><span>Pompiers</span></div>
+    <div class="num"><b>17</b><span>Police, gendarmerie</span></div>
+    <div class="num"><b>114</b><span>Par SMS (sourds, malentendants)</span></div>
+  </div>
+  <p>Ces documents aident à comprendre et à transmettre ; ils ne remplacent ni un avis médical ni
+  une formation aux premiers secours.</p>
+  </div>
+
+  <h2>Français</h2>
+  <div class="card">
+  <h3>Bibliothèque médicale hors-ligne</h3>
+  <p>Avec une connexion, <code>epiviosi-medic-docs</code> ajoute à <strong>EPIVÍOSI WIKI</strong>
+  (≈ 4,4 Go, en anglais) :</p>
+  <table>
+    <tr><th>Archive</th><th>Contenu</th></tr>
+    <tr><td>Medical Library</td><td>Manuels de premiers secours et de médecine sans médecin</td></tr>
+    <tr><td>Military Medicine</td><td>Médecine de terrain, traumatismes</td></tr>
+    <tr><td>NHS Medicines A–Z</td><td>Médicaments : usages, doses, effets indésirables</td></tr>
+    <tr><td>MedlinePlus</td><td>Fiches maladies, examens et médicaments (NIH)</td></tr>
+    <tr><td>MDWiki</td><td>Encyclopédie médicale rédigée par des médecins</td></tr>
+  </table>
+  <p>Wikipédia en français (déjà dans EPIVÍOSI WIKI) couvre aussi la médecine.
+  <a href="http://127.0.0.1:8080/">Ouvrir la bibliothèque</a>.</p>
+  </div>
+
+  <div class="card">
+  <h3>Dossiers médicaux chiffrés</h3>
+  <ol>
+    <li>Menu → <strong>Dossiers médicaux</strong>. La première fois, choisissez une phrase de passe
+      longue : <strong>sans elle, les dossiers sont irrécupérables</strong>.</li>
+    <li>Le dossier <code>~/Dossiers-médicaux</code> s'ouvre, avec des modèles LibreOffice dans
+      <em>Modèles</em> : fiche patient, bilan secouriste, suivi de traitement. Enregistrez une copie
+      par patient.</li>
+    <li>Une fois terminé : relancer <strong>Dossiers médicaux</strong> → <em>Verrouiller</em>
+      (ou redémarrer).</li>
+  </ol>
+  <p>Le coffre est rangé dans <code>~/Persistant</code> : sans partition de persistance
+  (<code>sudo epiviosi-persist-setup</code>), il est perdu au redémarrage.</p>
+  </div>
+  </section>
+
+  <section id="en" lang="en">
+  <h2>English</h2>
+  <div class="card urgent">
+  <h3>Emergency: call first</h3>
+  <p><strong>112</strong> works everywhere in Europe (in France also 15 medical, 18 fire, 17 police,
+  114 by text message). These documents help to understand and report; they replace neither medical
+  advice nor first-aid training.</p>
+  </div>
+
+  <div class="card">
+  <h3>Offline medical library</h3>
+  <p>While online, <code>epiviosi-medic-docs</code> adds to <strong>EPIVÍOSI WIKI</strong>
+  (≈ 4.4 GB): Medical Library (first aid, “where there is no doctor” manuals), Military Medicine,
+  NHS Medicines A–Z, MedlinePlus and MDWiki. <a href="http://127.0.0.1:8080/">Open the library</a>.</p>
+  </div>
+
+  <div class="card">
+  <h3>Encrypted medical records</h3>
+  <p>Menu → <strong>Dossiers médicaux</strong>. The first time, choose a long passphrase —
+  <strong>without it, records cannot be recovered</strong>. The folder <code>~/Dossiers-médicaux</code>
+  opens with LibreOffice templates (patient record, first-aid report, treatment log). Run it again
+  to lock. The vault lives in <code>~/Persistant</code>: without a persistence partition it is lost
+  at reboot.</p>
+  </div>
+  </section>
+</main>
+</body>
+</html>
